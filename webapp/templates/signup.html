@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+        <input type="text" id="email" name="email" placeholder="Email">
+        <input type="password" id="password" name="password" placeholder="Password">
+        <button type="button" onclick="signup()">Sign Up</button>
+    </form>
+
+    <p id="signupError" style="color: red;"></p>
+    <p id="signupSuccess" style="color: green; display: none;">Done successfully!</p> <!-- Added success message -->
+
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js"></script>
+    <script src="{{ url_for('static', filename='firebase_config.js') }}"></script>
+    <script src="{{ url_for('static', filename='signup.js') }}"></script>
+{% endblock %}
